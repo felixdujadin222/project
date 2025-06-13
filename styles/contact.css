@@ -1,0 +1,60 @@
+/* contact.css - Styles for Contact Page */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap');
+
+/* Base */
+body{
+  margin:0;
+  font-family:'Open Sans',sans-serif;
+  background:#f9f9f9;
+  color:#333;
+  line-height:1.6;
+}
+
+.container{max-width:1140px;margin:0 auto;padding:1rem;}
+
+/* Header with logo right and nav centred */
+header{background:#0a9396;color:#fff;padding:1rem 0;}
+
+.header-container{display:flex;align-items:center;gap:1rem;}
+
+/* Allow nav block to grow and centre its items */
+.header-container nav{flex:1;}
+
+.nav-list{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:1.5rem;}
+
+.nav-list li a{position:relative;color:#fff;text-decoration:none;font-weight:bold;font-size:1.15rem;overflow:hidden;display:inline-block;}
+
+.nav-list li a::after{content:"";position:absolute;left:-100%;bottom:0;width:100%;height:2px;background:#00ee7f;transition:left .3s ease-out;}
+
+.nav-list li a:hover::after{left:0;}
+
+.logo{max-height:60px;}
+
+/* Hero */
+.hero{background:#94d2bd;border-radius:10px;padding:2rem 1rem;text-align:center;margin-bottom:2rem;}
+.hero h2{font-family:'Montserrat',sans-serif;font-size:1.8rem;color:#005f73;margin-bottom:.5rem;}
+.hero p{max-width:600px;margin:0 auto;color:#333;font-size:1rem;}
+
+/* Contact form */
+.contact-form-section{background:#fff;padding:2rem;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.05);max-width:700px;margin:0 auto;}
+.contact-form{display:flex;flex-direction:column;gap:1rem;}
+.form-group{display:flex;flex-direction:column;}
+label{font-weight:bold;margin-bottom:.3rem;}
+input,textarea{padding:.75rem;border:1px solid #ccc;border-radius:4px;font-family:inherit;font-size:1rem;}
+textarea{resize:vertical;}
+.submit-button{background:#ca6702;color:#fff;padding:.75rem;border:none;border-radius:4px;font-weight:bold;cursor:pointer;transition:background .3s ease;}
+.submit-button:hover{background:#bb5800;}
+.confirmation-message{margin-top:1rem;font-weight:bold;color:#007f5f;}
+
+/* Footer */
+footer{text-align:center;padding:1rem;margin-top:2rem;background:#eee;}
+
+/* Responsive */
+@media(max-width:768px){
+  .header-container{flex-direction:column-reverse;align-items:center;text-align:center;}
+  .logo{margin-top:1rem;}
+  .nav-list{flex-direction:column;gap:.5rem;}
+  .hero h2{font-size:1.5rem;}
+  .submit-button{width:100%;}
+}

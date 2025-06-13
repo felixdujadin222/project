@@ -1,0 +1,119 @@
+/* siteplan.css - Styling for the Learn to Code with Felix Site Plan */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap');
+
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #005f73;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 0;
+  border-bottom: 2px solid #005f73;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  border-left: 4px solid #ee9b00;
+  padding-left: 0.5rem;
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: #0a9396;
+  text-decoration: none;
+}
+
+
+header {
+  background-color: #0a9396;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.nav li a {
+  position: relative; /* Needed for positioning the pseudo-element */
+  text-decoration: none; /* Remove default underline */
+  color: inherit; /* Inherit text color, or set a specific one */
+  overflow: hidden; /* Important for hiding the initial state of the underline */
+  display: inline-block; /* Essential for proper sizing and positioning */
+  font-size: 1.25rem; /* larger font size */
+  font-weight: 600;   /* semi-bold for consistency with Montserrat */
+
+}
+.nav li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Thickness of the underline */
+  background-color: #007bff; /* Color of the underline */
+  bottom: 0;
+  left: -100%; /* Start off-screen to the left */
+  transition: left 0.3s ease-out; /* Smooth transition for the left property */
+}
+
+
+.nav li a:hover::after {
+  left: 0; /* Slide in from the left */
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav li a {
+    font-size: 1rem; /* Mobile-friendly size */
+  }
+}
+
